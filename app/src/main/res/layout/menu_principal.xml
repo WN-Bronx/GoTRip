@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/lgfundo"
+    tools:context=".activity.MenuPrincipal">
+
+    <TextView
+        android:id="@+id/tViewMunuTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="5dp"
+        android:fontFamily="cursive"
+        android:text="@string/go_trip"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="95sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iViewNovoGasto"
+        android:layout_width="110dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/iViewNovaViagem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tViewMunuTitulo"
+        app:srcCompat="@drawable/money" />
+
+    <ImageView
+        android:id="@+id/iViewNovaViagem"
+        android:layout_width="110dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iViewNovoGasto"
+        app:layout_constraintTop_toBottomOf="@+id/tViewMunuTitulo"
+        app:srcCompat="@drawable/nv_viagem" />
+
+    <TextView
+        android:id="@+id/tViewNovoGasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="cursive"
+        android:text="@string/novogasto"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tViewNovaViagem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iViewNovoGasto" />
+
+    <TextView
+        android:id="@+id/tViewNovaViagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="45dp"
+        android:fontFamily="cursive"
+        android:text="@string/novaviagem"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tViewNovoGasto"
+        app:layout_constraintTop_toBottomOf="@+id/iViewNovaViagem" />
+
+    <ImageView
+        android:id="@+id/iViewMinhasViagens"
+        android:layout_width="110dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintEnd_toStartOf="@+id/iViewConfig"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tViewNovoGasto"
+        app:srcCompat="@drawable/minhas_viagens" />
+
+    <ImageView
+        android:id="@+id/iViewConfig"
+        android:layout_width="110dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iViewMinhasViagens"
+        app:layout_constraintTop_toBottomOf="@+id/tViewNovaViagem"
+        app:srcCompat="@drawable/ferramenta" />
+
+    <TextView
+        android:id="@+id/tViewMinhasViagens"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="cursive"
+        android:text="@string/minhas_viagens"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tViewConfig"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iViewMinhasViagens" />
+
+    <TextView
+        android:id="@+id/tViewConfig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="cursive"
+        android:text="@string/config"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tViewMinhasViagens"
+        app:layout_constraintTop_toBottomOf="@+id/iViewConfig" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

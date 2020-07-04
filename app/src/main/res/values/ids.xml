@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tViewDataGasto" type="id" />
+    <item name="spTipoGasto" type="id" />
+    <item name="tViewValorGasto" type="id" />
+    <item name="bttDataGasto" type="id" />
+    <item name="tViewData" type="id" />
+</resources>

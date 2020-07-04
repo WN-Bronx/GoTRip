@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">GoTrip</string>
+    <string name="GoTrip">Go Trip</string>
+    <string name="goTrip">GoTRip</string>
+    <string name="usuario">E-mail</string>
+    <string name="senha">Senha</string>
+    <string name="entrar">ENTRAR</string>
+    <string name="go_trip">Go TRip</string>
+    <string name="novogasto">Novo Gasto</string>
+    <string name="novaviagem">Nova Viagem</string>
+    <string name="minhas_viagens">Minhas Viagens</string>
+    <string name="config">Configurações</string>
+    <string name="hintemail">E-mail</string>
+    <string name="hintpassword">**********</string>
+    <string name="destino"></string>
+    <string name="hintnovodestino">Novo Destino</string>
+    <string name="lazer">Lazer</string>
+    <string name="negocios">Negócios</string>
+    <string name="tipo">Motivo da Viagem</string>
+    <string name="motivo">Motivo da Viagem</string>
+    <string name="datainicial">Data da Chegada</string>
+    <string name="datafim">Data da Partida</string>
+    <string name="datacheckin">Chegada</string>
+    <string name="datacheckout">Partida</string>
+    <string name="datain" />
+    <string name="dataout" />
+    <string name="hintorcamento">Orçamento</string>
+    <string name="qtdpessoas">Quantidade de Pessoas</string>
+    <string name="hintqtdpessoa">add</string>
+    <string name="salvarviagem">SALVAR VIAGEM</string>
+    <string name="tipogasto">Motivo do Gasto</string>
+    <string name="datagasto">Data</string>
+    <string name="valorgasto">Valor</string>
+    <string name="valor"></string>
+    <string name="data">Data</string>
+    <string name="descricao">Descrição</string>
+    <string name="info"></string>
+    <string name="local">Local</string>
+    <string name="gastei">GASTEI</string>
+    <string name="dadolocal" />
+
+    <string-array name="tipogasto_array">
+        <item>Estacionamento</item>
+        <item>Alimentação</item>
+        <item>Transporte</item>
+        <item>Hospedagem</item>
+        <item>Passagens</item>
+        <item>Presente</item>
+        <item>Passeios</item>
+        <item>Extras</item>
+    </string-array>
+</resources>
