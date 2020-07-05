@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:orientation="vertical"
+    tools:context=".activity.NewLogin">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logoprincipal" />
+
+    <EditText
+        android:id="@+id/edTextNewEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/login_edtext"
+        android:drawableLeft="@drawable/ic_action_loginuser"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:textColor="#EFEBEB"
+        android:textColorHighlight="#F6F2F2"
+        android:textColorHint="#4CAF50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <EditText
+        android:id="@+id/edTextNewSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/login_edtext"
+        android:drawableLeft="@drawable/ic_action_loginpass"
+        android:ems="10"
+        android:hint="**********"
+        android:inputType="textPassword"
+        android:password="true"
+        android:textColor="#EFEBEB"
+        android:textColorHighlight="#F6F2F2"
+        android:textColorHint="#4CAF50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTextNewEmail" />
+
+    <Button
+        android:id="@+id/bttNewUser"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/login_button"
+        android:drawableLeft="@drawable/ic_action_salvar"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="@string/salvaruser"
+        android:textAlignment="center"
+        android:textColor="#EFEBEB"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bttDelete"
+        app:layout_constraintTop_toBottomOf="@+id/edTextNewSenha"/>
+
+    <Button
+        android:id="@+id/bttDelete"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="42dp"
+        android:background="@drawable/login_button"
+        android:drawableLeft="@drawable/ic_action_delete"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="@string/deleteuser"
+        android:textAlignment="center"
+        android:textColor="#EFEBEB"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/bttNewUser"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTextNewSenha"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

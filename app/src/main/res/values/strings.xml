@@ -49,4 +49,9 @@
         <item>Passeios</item>
         <item>Extras</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="deleteuser">Excluir Conta</string>
+    <string name="salvaruser">Salvar</string>
+    <string name="criarconta">CRIAR CONTA</string>
 </resources>

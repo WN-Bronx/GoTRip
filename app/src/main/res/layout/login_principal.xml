@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/login_background"
     android:orientation="vertical"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.Login">
 
     <ImageView
         android:id="@+id/imageView"
@@ -94,7 +94,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="45dp"
         android:background="@drawable/login_button"
         android:drawableLeft="@drawable/ic_action_loginentrar"
@@ -107,4 +107,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edTextSenha" />
+
+    <Button
+        android:id="@+id/bttConta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="168dp"
+        android:background="#00FFFFFF"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/criarconta"
+        android:textColor="#4CAF50"
+        android:textSize="17sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bttLogin" />
 </androidx.constraintlayout.widget.ConstraintLayout>

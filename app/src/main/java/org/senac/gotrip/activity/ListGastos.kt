@@ -1,7 +1,8 @@
-package org.senac.gotrip
+package org.senac.gotrip.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import org.senac.gotrip.R
 
 class ListGastos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

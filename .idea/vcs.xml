@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$/ArquivoLayout" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/BoaViagem" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/BoaViagem - Copia" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/CapitalFuturo" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/ConversorTemperatura_F_p_C" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/GorjetasBronx_Projects" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/JogandoDado" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Layouts_01" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/MandaSMS" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/RelatorioEscolar" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/UrnaEleitoral" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/ValorCapital" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/_GoTrip" vcs="Git" />
+    <mapping directory="" vcs="Git" />
   </component>
 </project>
