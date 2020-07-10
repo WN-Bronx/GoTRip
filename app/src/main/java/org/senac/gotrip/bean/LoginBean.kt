@@ -10,8 +10,10 @@ import androidx.room.PrimaryKey
 
 @Entity
 class LoginBean (
-    @PrimaryKey /* define a variável id como sendo chave prim[primária */
-    val id: Int,
-    @ColumnInfo(name = "email") val email: String?,
-    @ColumnInfo(name = "senha") val senha: String?
-)
+    @ColumnInfo(name = "nome") var nome: String?,
+    @ColumnInfo(name = "email") var email: String?,
+    @ColumnInfo(name = "senha") var senha: String?){
+    /* define a variável id como sendo chave primária e autoincrement */
+    @PrimaryKey(autoGenerate = true)
+    var id: Int = 0
+}

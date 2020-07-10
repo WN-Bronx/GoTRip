@@ -5,7 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import org.senac.gotrip.R
-import org.senac.gotrip.dao.AppDatabase
+import org.senac.gotrip.base.AppDatabase
 
 class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

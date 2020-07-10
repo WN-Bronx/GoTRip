@@ -9,7 +9,7 @@ import androidx.room.Room
 import kotlinx.android.synthetic.main.new_login.*
 import org.senac.gotrip.R
 import org.senac.gotrip.bean.LoginBean
-import org.senac.gotrip.dao.AppDatabase
+import org.senac.gotrip.base.AppDatabase
 
 
 class NewLogin : AppCompatActivity() {
@@ -31,54 +31,90 @@ class NewLogin : AppCompatActivity() {
         val btDeluser = findViewById<Button>(R.id.bttDelete)
 
         btScriar.setOnClickListener {
-            //Busca o login do banco de dados
-            var l: LoginBean = dao.fazerLogin(edNemail.text.trim().toString(), edNsenha.text.trim().toString())
+            //Variaveil com valores informados na tela
+            var nome: String = edTextNewNome.text.trim().toString()
+            var email: String = edTextNewEmail.text.trim().toString()
+            var senha: String = edTextNewSenha.text.trim().toString()
 
-            try {
-                if(l != null){
-                    AlertDialog.Builder(this@NewLogin)
-                        .setTitle("DB")
-                        .setMessage(" Login cadastrado com sucesso :D ")
-                        .setPositiveButton("OK", {dialog, i -> dialog.dismiss() })
-                        .show()
-                } else{
-                    AlertDialog.Builder(this@NewLogin)
-                        .setTitle("DB")
-                        .setMessage(" [ Falha no cadastro ] "+l.email+ "   -   "+l.senha)
-                        .setPositiveButton("OK", {dialog, i -> dialog.dismiss() })
-                        .show()
+            var validaCampos: String = this.validarCampos(nome, email, senha)
+            if(validaCampos.equals("")){
+                //Cria um novo registro no banco
+                var l:LoginBean = LoginBean(nome, email, senha) //Objeto que será salvo
+                dao.insertAll(l) //Salva o objeto no banco
+
+                //Tenta fazer o login com o usuário que acabou de ser criado - se funcionar... é pq cadastrou com sucesso
+                l = dao.fazerLogin(l.email.toString(), l.senha.toString())
+
+                try {
+                    if(l != null){
+                        this.exibirAlerta("Criar Conta", "[ Login cadastrado com sucesso :D ]")
+                    } else{
+                        this.exibirAlerta("Criar Conta", " [ Falha no cadastro ] "+l.email+ "   -   "+l.senha)
+                    }
+                } catch (e: Exception){
+                    this.exibirAlerta("Criar Conta", "X- Autenticação não autorizada -X")
                 }
-            } catch (e: Exception){
-                AlertDialog.Builder(this@NewLogin)
-                    .setTitle("DB")
-                    .setMessage(" X- Autenticação não autorizada -X ")
-                    .setPositiveButton("OK", {dialog, i -> dialog.dismiss() })
-                    .show()
+            } else {
+                this.exibirAlerta("Criar Conta", validaCampos)
             }
         }
+
         //Deletar login do banco de dados
         btDeluser.setOnClickListener {
-
-            var login = LoginBean(id = 1, email = "gotrip@gotrip.com.br", senha = "java")
-                dao?.insertAll(login)
-
-            try {
-                dao.delete(login)
-                AlertDialog.Builder(this@NewLogin)
-                    .setTitle("DB")
-                    .setMessage(" [ Conta Deletada ] ")
-                    .setPositiveButton("OK", { dialog, i -> dialog.dismiss() })
-                    .show()
-            } catch (e: Exception) {
-                AlertDialog.Builder(this@NewLogin)
-                    .setTitle("DB")
-                    .setMessage(" [ ERROR ] ")
-                    .setPositiveButton("OK", { dialog, i -> dialog.dismiss() })
-                    .show()
+            var validaCampos: String = this.validarCamposDeletar(edTextNewEmail.text.trim().toString(), edTextNewSenha.text.trim().toString())
+            if(validaCampos.equals("")){
+                try {
+                    //TEnta fazer login com os dados informados
+                    var login = dao.fazerLogin(edTextNewEmail.text.trim().toString(), edTextNewSenha.text.trim().toString())
+                    if(login != null){//Só deleta se encontrar o usuário
+                        dao.delete(login)
+                        this.exibirAlerta("Deletar Conta", " [ Conta Deletada ]")
+                    } else {
+                        this.exibirAlerta("Deletar Conta", " [ Conta não encontrada ]")
+                    }
+                } catch (e: Exception) {
+                    this.exibirAlerta("Deletar Conta", "X- Falha ao deletar conta -X")
+                }
+            } else {
+                this.exibirAlerta("Deletar Conta", validaCampos)
             }
         }
     }
+
+    private fun exibirAlerta(titulo: String, msg: String) {
+        AlertDialog.Builder(this@NewLogin)
+            .setTitle(titulo)
+            .setMessage(msg)
+            .setPositiveButton("OK", {dialog, i -> dialog.dismiss() })
+            .show()
+    }
+
+    //Valida se os campos foram preenchido e retorna a informação do que ainda falta ser preenchido
+    private fun validarCampos(nome:String, email:String, senha:String): String{
+        var result: String = ""
+
+        if (nome.equals(""))
+            result = "-> Favor informar o nome do usuário\n"
+
+        if(email.equals(""))
+            result += "-> Favor informar o email do usuário\n"
+
+        if(senha.equals(""))
+            result += "-> Favor informar a senha do usuário"
+
+        return result
+    }
+
+    //Valida apenas email e senha
+    private fun validarCamposDeletar(email:String, senha:String): String{
+        var result: String = ""
+
+        if(email.equals(""))
+            result = "-> Favor informar o email do usuário\n"
+
+        if(senha.equals(""))
+            result += "-> Favor informar a senha do usuário"
+
+        return result
+    }
 }
-
-
-//var login = LoginBean(id = 1, edNemail.text.trim().toString(), edNsenha.text.trim().toString())
